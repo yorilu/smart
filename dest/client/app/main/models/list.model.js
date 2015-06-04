@@ -1,0 +1,1 @@
+define(["app"],function(e){e.factory("listModel",["scHttp",function(e){var t={citys:angular.extend({},e,{url:"getCityList"}),stadiumLists:angular.extend({},e,{url:"getCityStadiumList"})};return t}])})

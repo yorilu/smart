@@ -1,0 +1,1 @@
+define([],function(){return{common:{about:{url:"/about"},feedback:{url:"/feedback"}}}})

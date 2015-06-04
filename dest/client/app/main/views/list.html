@@ -1,0 +1,24 @@
+    <header>
+    <span class="lsticon" ng-click="back()"><i></i></span>
+    <h2>全部场馆</h2>
+  </header>
+  <div class="wrapper">
+<sc-tab tab-model="dataModel" ></sc-tab>
+      <article class="pt9">
+        <section class="pt10">
+          <div class="pd24">
+            <div class="allvictm clfix">
+              <div class="mbtm24 width48" ng-repeat="j in json">
+                <dl>
+                  <dt class="repst grayb1">
+                    <a ng-href="/court/{{j.id}}"><img ng-src="{{j.images}}"></a>
+                    <span class="bgcol">{{j.name}}</span>
+                  </dt>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+  </div>
+

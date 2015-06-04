@@ -1,0 +1,27 @@
+<h1><code ng:non-bindable="">smartCourtLib#scView</code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="smartcourtlib-scview-page"><p>在ngView 基础上封装的属性。完成以下功能.</p>
+<ol>
+<li>保存页面切换时是当前页的状态数据如滚动条位置，未提交的表单数据等</li>
+<li>无侵入的为controller.js 的 $scope添加公用方法</li>
+</ol>
+<h4 id="description_用法">用法</h4>
+<pre class="prettyprint linenums">
+    //controller.js
+    //回退
+    $scope.back()
+    $scope.showToast();
+    $scope.hideToast()
+    $scope.showAlert()
+    $scope.hideAlert()
+</pre>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY sc-view&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+</div>

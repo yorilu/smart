@@ -1,0 +1,1 @@
+(function(){angular.module("mobile-angular-ui.migrate.disabled",[]).run(["$document",function(e){return angular.element(e).on("click tap",function(e){var t;return t=angular.element(e.target),t.hasClass("disabled")?(e.preventDefault(),e.stopPropagation(),t=null,!1):(t=null,!0)})}])})()

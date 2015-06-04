@@ -1,0 +1,1 @@
+angular.module("test",["oc.lazyLoad"]).config(["$ocLazyLoadProvider",function(e){e.config({jsLoader:requirejs,debug:!0})}]).controller("mainController",["$scope","$ocLazyLoad",function(e,t){e.test="Hi there",e.partialUrl="",e.load=function(){t.load("lazymodule").then(function(){e.partialUrl="partials/grid.html"},function(e){console.log(e)})}}])

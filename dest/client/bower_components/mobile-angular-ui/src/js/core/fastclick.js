@@ -1,0 +1,1 @@
+(function(){var e=angular.module("mobile-angular-ui.core.fastclick",[]);e.run(["$window","$document",function(e,t){e.addEventListener("load",function(){FastClick.attach(t[0].body)},!1)}]),angular.forEach(["select","input","textarea"],function(t){e.directive(t,function(){return{restrict:"E",compile:function(e){e.addClass("needsclick")}}})})})()

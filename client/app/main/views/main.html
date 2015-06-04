@@ -1,0 +1,65 @@
+<header>
+  <h1 class="lh88"><img src="../assets/images/logo.png"/></h1>
+</header>
+
+<div class="wrapper pt44" ng-show='showAd'>
+  <!--imgwrap-->
+  <section >
+    <div class="img_wrap repst">
+      <div class="pic_banner"><!--slide_img-->
+        <div class="slide_img ">
+          <a ng-href="{{downloadUrl}}" ><img src="../assets/images/banner.jpg"/></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<article class="inneradd pd24" ng-class="{'pt44': !showAd}">
+  <section>
+    <div class="content ">
+      <div class="msghead clfix">
+        <label class="fl">离您最近</label>
+        <a ng-href="/list/{{model.cityId}}" class="fr">查看全部</a>
+      </div>
+      <div class="msmain">
+        <div class="allvictm clfix">
+          <div class=" width48" ng-repeat="stadium in  model.nearByStadiums track by stadium.id">
+            <dl>
+              <dt class="repst grayb1">
+                <a ng-href="/court/{{stadium.id}}"><img ng-src="{{stadium.images}}"/></a>
+                <span class="bgcol">{{stadium.cityName}} {{stadium.cityPinyin}}</span>
+              </dt>
+              <dd class="gray2 lh44 moretext">{{stadium.name}}</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--推荐-->
+  <section>
+    <div class="pdbtom1">
+      <div class="msghead" >
+        <label>您可能喜欢</label>
+      </div>
+      <div class="msmain">
+        <div class="allvictm clfix">
+          <div class=" width48" ng-repeat="video in  model.topVideos track by video.id">
+            <div class="repst wid10 grayb1">
+              <div class="wid10 vedioimg" ><img ng-src="{{video.snapshot}}"></div>
+              <div class="playicon" ng-click="playVideo('{{video.id}}')">
+              </div>
+              <div class="bgcol">{{video.title}}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+<section id="j_main_video_container" class="outwindow"  >
+   <!--UC 如果video 不设置初始值，动态改变src是，第一次无法播放 -->
+  <video id="j_main_video" height="180" width="320" preload="none" title="xxxx"  src=""></video>
+</section>

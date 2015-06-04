@@ -1,0 +1,10 @@
+/**
+
+ * UI-Router Extras: Sticky states, Future States, Deep State Redirect, Transition promise
+ * Module: core
+ * @version 0.0.13
+ * @link http://christopherthielen.github.io/ui-router-extras/
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+
+(function(e,t){function p(e,t){var n=[];for(var r in e.path){if(e.path[r]!==t.path[r])break;n.push(e.path[r])}return n}function d(t){if(Object.keys)return Object.keys(t);var n=[];return e.forEach(t,function(e,t){n.push(t)}),n}function v(e,t){var n=[];for(var r in e)(!t||t.indexOf(r)===-1)&&n.push(r);return n}function m(e,t){if(Array.prototype.indexOf)return e.indexOf(t,Number(arguments[2])||0);var n=e.length>>>0,r=Number(arguments[2])||0;r=r<0?Math.ceil(r):Math.floor(r),r<0&&(r+=n);for(;r<n;r++)if(r in e&&e[r]===t)return r;return-1}function g(e,t,n,r){var i=p(n,r),s,o={},f=[];for(var l in i){if(!i[l].params)continue;s=a(i[l].params)?i[l].params:d(i[l].params);if(!s.length)continue;for(var c in s){if(m(f,s[c])>=0)continue;f.push(s[c]),o[s[c]]=e[s[c]]}}return u({},o,t)}function y(e,t){return u(new(u(function(){},{prototype:e})),t)}function b(e){i.push(e)}var n=e.module("ct.ui.router.extras.core",["ui.router"]),r={},i=[];n.config(["$stateProvider","$injector",function(t,n){t.decorator("parent",function(t,n){return r[t.self.name]=t,t.self.$$state=function(){return r[t.self.name]},e.forEach(i,function(e){e(t)}),n(t)})}]);var s=!1,o=e.forEach,u=e.extend,a=e.isArray,f=function(e,t){var n=[];return o(e,function(e,r){n.push(t(e,r))}),n},l=function(e){return f(e,function(e,t){return t})},c=function(e,t){var n=[];return o(e,function(e,r){t(e,r)&&n.push(e)}),n},h=function(e,t){var n={};return o(e,function(e,r){t(e,r)&&(n[r]=e)}),n};n.provider("uirextras_core",function(){var t={internalStates:r,onStateRegistered:b,forEach:o,extend:u,isArray:a,map:f,keys:l,filter:c,filterObj:h,ancestors:p,objectKeys:d,protoKeys:v,arraySearch:m,inheritParams:g,inherit:y};e.extend(this,t),this.$get=function(){return t}})})(angular)

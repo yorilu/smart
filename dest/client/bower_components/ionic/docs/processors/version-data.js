@@ -1,0 +1,1 @@
+module.exports={name:"version-data",runBefore:["api-docs"],description:"Expose version data to templates",process:function(e,t){e.version=t.get("versionData")}}

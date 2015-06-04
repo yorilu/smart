@@ -1,0 +1,1 @@
+module.exports={name:"capital",process:function(e){return e||(e=""),e.charAt(0).toUpperCase()+e.substring(1)}}

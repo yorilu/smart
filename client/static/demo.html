@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>HTML5 MediaElement</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../components/src/videoplayer/js/me-namespace.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/me-utility.js" type="text/javascript"></script>
+
+  <script src="../components/src/videoplayer/js/me-i18n.js" type="text/javascript"></script>
+  <!--<script src="../components/src/videoplayer/js/me-plugindetector.js" type="text/javascript"></script>-->
+  <script src="../components/src/videoplayer/js/me-featuredetection.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/me-mediaelements.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/me-shim.js" type="text/javascript"></script>
+
+  <script src="../components/src/videoplayer/js/mep-library.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-player.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-playpause.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-progress.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-time.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-speed.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-tracks.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-volume.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-stop.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-fullscreen.js" type="text/javascript"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-titlebar.js" type="text/javascript"></script>
+
+  <script src="../components/src/videoplayer/js/mep-feature-skipback.js"></script>
+  <script src="../components/src/videoplayer/js/mep-feature-visualcontrols.js"></script>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../assets/videoplayer/mediaelementplayer.min.css" />
+</head>
+<body>
+
+<h1>MediaElementPlayer.js</h1>
+
+<!-- simple single file method -->
+<video height="180" width="320"
+       src="http://videofile.test1.smartcourt.cn/xiaoyangtest/9000000018/120/qingpdiao_chang.mp4" type="video/mp4"
+       id="player1"
+       poster="http://www.sinaimg.cn/dy/slidenews/3_img/2010_46/16617_41281_330606.jpg"
+       controls="controls" preload="none"></video>
+
+<span id="player1-mode"></span>
+
+
+<script>
+
+  var player = new MediaElementPlayer('#player1',{
+
+    features: ['playpause','progress','current','duration','tracks','volume','fullscreen','titlebar']
+
+  });
+  //  player.play();
+
+</script>
+<!--<script src="http://172.16.209.148:8080/target/target-script-min.js#anonymous"></script>-->
+
+
+
+</body>
+</html>

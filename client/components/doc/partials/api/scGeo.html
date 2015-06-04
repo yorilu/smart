@@ -1,0 +1,46 @@
+<h1><code ng:non-bindable="">scGeo</code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="scgeo-page"><p>提供定位相关服务</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getcurrentposition">getCurrentPosition(options)</h3>
+<div class="getcurrentposition"><h5 id="methods_getcurrentposition_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>options <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="scgeo-getcurrentposition-page"><p>定位选项</p>
+</div><table><thead><tr><th>Property</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>enableHighAcuracy</td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="scgeo-getcurrentposition-page"><p>是否开启高精度定位，默认为false</p>
+</div></td></tr><tr><td>timeout</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="scgeo-getcurrentposition-page"><p>定位超时时间，默认为3s</p>
+</div></td></tr></tbody></table></td></tr></tbody></table><h4 id="methods_getcurrentposition_example">Example</h4>
+<div class="example"><div class="scgeo-getcurrentposition-page"><pre class="prettyprint linenums">
+//获取定位promise
+var geoPromise = scGeo.getCurrentPosition();
+
+geoPromise.then(function (data) {
+  //成功处理
+  //数据格式为
+  data = {
+    "speed" : null,
+    "longitude" : 121.4712441,
+    "latitude" : 31.2723774,
+    "accuracy" : 34,
+    "heading" : null,
+    "altitude" : null,
+    "altitudeAccuracy" : null
+  }
+},function (data) {
+  //失败处理
+  //数据格式为
+  data = {
+    "message“：”失败说明“,
+   "code":"错误码"
+  }
+  //错误码定义
+  //UNKNOW_ERROR|PERMISSION_DENIED|POSITION_UNAVALIABLE|TIMEOUT
+})
+</pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

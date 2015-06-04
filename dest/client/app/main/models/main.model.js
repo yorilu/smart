@@ -1,0 +1,1 @@
+define(["app"],function(e){e.factory("mainModel",["scHttp",function(e){var t={topNVideo:angular.extend({},e,{url:"getTopNVideo"}),nearByStadiums:angular.extend({},e,{url:"getNearbyStadium"})};return t}])})

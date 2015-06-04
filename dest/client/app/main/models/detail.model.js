@@ -1,0 +1,1 @@
+define(["app"],function(e){e.factory("detailModel",["scHttp",function(e){var t={citys:angular.extend({},e,{url:"getCityList"}),getTimeLinePrev:angular.extend({},e,{url:"getStadiumOverview"}),getTimeLineNext:angular.extend({},e,{url:"getStadiumOverview"}),getCourtList:angular.extend({},e,{url:"getCourtList"})};return t}])})

@@ -1,0 +1,83 @@
+<h1><code ng:non-bindable="">sc-view</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">smartCourtLib</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="smartcourtlib-directive-page smartcourtlib-directive-sc-view-page"><p>在ngView 基础上封装的属性。完成以下功能.</p>
+<ol>
+<li>为ngView的controller提供生命周期方法，onEnter(),onExit()</li>
+<li>保存页面切换时是当前页的状态数据如$scope.model和滚动条位置</li>
+<li>无侵入的为controller.js 的 $scope添加公用方法</li>
+</ol>
+<h4 id="description_用法">用法</h4>
+<pre class="prettyprint linenums">
+    //controller.js
+    //入口方法
+    onEnter()
+    //出口方法
+    onExit()
+    //回退
+    $scope.back()
+    $scope.showToast();
+    $scope.hideToast()
+    $scope.showAlert()
+    $scope.hideAlert()
+</pre>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY sc-view&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_back">back()</h3>
+<div class="back"><div class="smartcourtlib-scview-back-page"><p>返回上个view</p>
+</div></div>
+</li>
+<li><h3 id="methods_hidealert">hideAlert()</h3>
+<div class="hidealert"><div class="smartcourtlib-scview-hidealert-page"><p>隐藏Alert</p>
+</div></div>
+</li>
+<li><h3 id="methods_hidetoast">hideToast()</h3>
+<div class="hidetoast"><div class="smartcourtlib-scview-hidetoast-page"><p>隐藏toast</p>
+</div></div>
+</li>
+<li><h3 id="methods_onenter">onEnter()</h3>
+<div class="onenter"><div class="smartcourtlib-scview-onenter-page"><p>每次切换到该页面时执行,为该view Controller的入口方法，可以在此执行业务逻辑代码</p>
+</div><h4 id="methods_onenter_example">Example</h4>
+<div class="example"><div class="smartcourtlib-scview-onenter-page"><pre class="prettyprint linenums">
+//controll.js
+$scope.onEnter = function(){
+  //业务逻辑
+}
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_onexit">onExit(data)</h3>
+<div class="onexit"><div class="smartcourtlib-scview-onexit-page"><p>每次离开该页面时执行，为该view Controller的出口方法，可以在此执行清理工作</p>
+</div><h5 id="methods_onexit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scview-onexit-page"><p>消息体</p>
+</div></td></tr></tbody></table><h4 id="methods_onexit_example">Example</h4>
+<div class="example"><div class="smartcourtlib-scview-onexit-page"><pre class="prettyprint linenums">
+//controll.js
+ $scope.onExit = function(){
+   //业务逻辑
+ }
+</pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_showalert">showAlert(data)</h3>
+<div class="showalert"><div class="smartcourtlib-scview-showalert-page"><p>显示Alert</p>
+</div><h5 id="methods_showalert_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scview-showalert-page"><p>消息体</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_showtoast">showToast(data)</h3>
+<div class="showtoast"><div class="smartcourtlib-scview-showtoast-page"><p>显示toast</p>
+</div><h5 id="methods_showtoast_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scview-showtoast-page"><p>消息体</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

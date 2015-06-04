@@ -1,0 +1,47 @@
+<h1><code ng:non-bindable="">scModel</code>
+<div><span class="hint">service in module <code ng:non-bindable="">smartCourtLib</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="smartcourtlib-scmodel-page"><p>因为angular.controller是无状态的，在页面每次切换时$scope的属性都会重新初始化。
+需要保持的状态要单独保存在service中，scModel就是这样一个Service
+使用是需要扩展此服务
+<pre class="prettyprint linenums">
+//model.js
+app.factory('listModel', ['scModel', function (scModel) {
+  var cityModel =  angular.extend({}, scModel, {
+    //model,可选，默认结构
+    model:{
+
+    }
+  }
+
+  return cityModel;
+});
+
+//controller.js
+module.controller(['cityModel','$http',function(cityModel,$http){
+  $scope.model = cityModel.model;
+
+  var promise = $http.get('/testapi');
+
+  promise.then(function(data){
+    cityModel.save($scope,'message',data);
+  });
+}])
+
+</pre>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_save">save(scope, attrName, attrValue)</h3>
+<div class="save"><div class="smartcourtlib-scmodel-save-page"><p>保存model数据至controller.$scope.model.
+因为angular controller 无法保存固化数据，需要在页面切换时将需要固化的数据保存指angular.service中</p>
+</div><h5 id="methods_save_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>scope</td><td><a href="" class="label type-hint type-hint-scope">scope</a></td><td><div class="smartcourtlib-scmodel-save-page"><p>controller.scope</p>
+</div></td></tr><tr><td>attrName</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="smartcourtlib-scmodel-save-page"><p>属性名，允许嵌套</p>
+</div></td></tr><tr><td>attrValue</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scmodel-save-page"><p>属性值</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

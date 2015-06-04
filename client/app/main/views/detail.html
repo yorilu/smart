@@ -1,0 +1,65 @@
+<header>
+  <span class="lsticon" ng-click="back('list')"><i></i></span>
+
+  <h2>{{stadiumName}}</h2>
+</header>
+<div class="wrapper pt44">
+  <!--videobegain-->
+  <div class="graybd" ng-class="{outwindow:!showMainVideo}">
+    <div class="repst detail-main-video" ng-click="palyMainVideo($event)">
+      <div class="outimag" style="background-image:url({{mainSnapshot}});"></div>
+      <div class="vepagic"></div>
+      <div class="abtion zinde"><a class="dwnapp">想看不同角度的视频，请下载安装 智慧运动场</a></div>
+      <div>
+        <video class="repst J_MainVideo videohide" preload="none" ng-attr-src="{{mainLiveUrl}}" ng-attr-poster="{{mainSnapshot}}" controls></video>
+      </div>
+    </div>
+    <div class="stadmbox clfix">
+      <h4 class="fl"></h4>
+      <span class="fr">{{address}}</span>
+    </div>
+  </div>
+  <!--videoend-->
+  <!--selectbegain-->
+  <div class="stamseek clfix">
+    <div class="fl gray3">筛选：</div>
+    <div class="stamiddle  fl">
+      <div class="hotball clfix" data-selected-class="greenbder1">
+        <a href="javascript:" class="fl  gray92b " ng-repeat="type in sportType" ng-click="filterSport(this,$event)">{{type}}</a>
+      </div>
+      <div class="hotarea clfix" ng-show="court.length > 1 && showCourt" data-selected-class="greenbder1">
+        <a href="javascript:" class="fl  gray92b J_Court" ng-repeat="courtdata in court" data-id="{{courtdata.id}}"
+           ng-click="filterCourt(this,$event)">{{courtdata.name}}</a>
+      </div>
+    </div>
+    <a href="javascript:" class="fr downbtn" ng-class="{'upbtn': !showMainVideo}" ng-click="toggleVideo()"></a>
+  </div>
+  <!--selectend-->
+  <!--detalstart-->
+  <div class="detsdm">
+    <sc-scrollview class="wid10 time-line" ng-class="{'short':showMainVideo,'long':!showMainVideo}"
+                   firebottom="timeline.update.next">
+      <div ng-repeat="item in timeLine">
+        <h4 class="whiter" ng-show="item.date">{{item.date}}</h4>
+        <ul class="schedule">
+          <li class="clfix bgcf6 dftball ng-class:{'篮球': 'bsktball', '足球': 'ftbal', '羽毛球': 'iceball'}[item.type]; ">
+            <div class="tmbal fl ">{{item.startTime | limitTo:5}}<br/>{{item.endTime | limitTo:5}}</div>
+            <div ng-class="{'step1': item.isFirst,'step2':!item.isFirst}">
+              <a href="javascript:" data-path="{{item.path}}" data-title="{{item.title}}" ng-click="palyVideo($event)">{{item.title}}</a>
+            </div>
+            <div class="fl wid10">
+              <ul>
+                <li class="wondfm bgceb" ng-repeat="video in item.clips">
+                  <span data-path="{{video.path}}" ng-click="palyVideo($event)" data-title="{{video.title}}">{{video.title}}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </sc-scrollview>
+  </div>
+</div>
+<section class="outwindow">
+  <video id="J_DetailVideo" height="180" width="320" preload="none" src=""></video>
+</section>

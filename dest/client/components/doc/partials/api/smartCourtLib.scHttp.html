@@ -1,0 +1,75 @@
+<h1><code ng:non-bindable="">scHttp</code>
+<div><span class="hint">service in module <code ng:non-bindable="">smartCourtLib</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="smartcourtlib-schttp-page"><p>封装$http,用以访问restful接口的基类，退服务端返回的错误报文也做了处理</p>
+<h4 id="description_用法">用法</h4>
+<p><pre>
+var city =  angular.extend({}, scHttp, {
+ url: &#39;getCityList&#39;,   //必选，api 接口
+ param: &#39;&#39;,            //可选，查询参数
+ cache: true           //可选，是否使用缓存，默认为false
+});</p>
+<p>//get方法
+var promise = city.get({cityId:1});
+promise.then(function(data){
+  //成功处理,此时数据只返回数据体
+},function(data){
+  //失败处理,数据包含服务端错误码
+})</p>
+<pre></div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_delete">delete(data, config)</h3>
+<div class="delete"><h5 id="methods_delete_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-delete-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-delete-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_delete_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-delete-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_execute">execute(data, method, config)</h3>
+<div class="execute"><h5 id="methods_execute_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-execute-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>method <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-execute-page"><p>请求方法</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-execute-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_execute_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-execute-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_get">get(data, config)</h3>
+<div class="get"><h5 id="methods_get_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-get-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-get-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_get_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-get-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_head">head(data, config)</h3>
+<div class="head"><h5 id="methods_head_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-head-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-head-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_head_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-head-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_jsonp">jsonp(data, config)</h3>
+<div class="jsonp"><h5 id="methods_jsonp_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-jsonp-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-jsonp-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_jsonp_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-jsonp-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_patch">patch(data, config)</h3>
+<div class="patch"><h5 id="methods_patch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-patch-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-patch-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_patch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-patch-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_post">post(data, config)</h3>
+<div class="post"><h5 id="methods_post_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-post-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-post-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_post_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-post-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_put">put(data, config)</h3>
+<div class="put"><h5 id="methods_put_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="smartcourtlib-schttp-put-page"><p>请求参数参数</p>
+</div></td></tr><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-config">config</a></td><td><div class="smartcourtlib-schttp-put-page"><p>请求配置</p>
+</div></td></tr></tbody></table><h5 id="methods_put_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="smartcourtlib-schttp-put-page"><p>promise</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

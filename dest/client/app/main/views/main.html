@@ -1,0 +1,58 @@
+<header>
+  <h1 class="lh88"><img src="../assets/images/logo.png"/></h1>
+</header>
+
+<div class="wrapper pt44">
+  <!--imgwrap-->
+  <section>
+    <div class="img_wrap repst">
+      <div class="pic_banner"><!--slide_img-->
+        <div class="slide_img ">
+          <a href="javascript:" ><img src="../assets/images/banner.jpg"/></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<article class="inneradd pd24">
+  <section>
+    <div class="content ">
+      <div class="msghead clfix">
+        <label class="fl">离您最近</label>
+        <a ng-href="/list/{{model.cityId}}" class="fr">查看全部</a>
+      </div>
+      <div class="msmain">
+        <div class="allvictm clfix">
+          <div class=" width48" ng-repeat="stadium in  model.nearByStadiums track by stadium.id">
+            <dl>
+              <dt class="repst grayb1">
+                <a ng-href="/court/{{stadium.id}}"><img ng-src="{{stadium.images}}"/></a>
+                <span class="bgcol">{{stadium.cityName}} {{stadium.cityPinyin}}</span>
+              </dt>
+              <dd class="gray2 lh44 moretext">{{stadium.name}}</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--推荐-->
+  <section>
+    <div class="pdbtom1">
+      <div class="msghead" ng-click="playVideo()">
+        <label>您可能喜欢</label>
+      </div>
+      <div class="msmain">
+        <div class="allvictm clfix">
+          <sc-video-container playvideo="playing" type="small"
+                              ng-repeat="video in  model.topVideos track by video.id">
+            <video class="videohide" ng-src="{{video.path}}" poster="{{video.snapshot}}"
+                   title="{{video.title}}"></video>
+          </sc-video-container>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+

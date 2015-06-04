@@ -1,0 +1,51 @@
+<header>
+		<span class="lsticon" ng-click="back()"><i></i></span>
+		<h2>场馆详情</h2>
+	</header>
+<div class="wrapper pt44">
+  <!--videobegain-->		
+  <div class="graybd" ng-class="{outwindow:!showMainVideo}">
+    <sc-video-container playvideo="playing">
+      <video class="repst J_MainVideo videohide" ng-attr-src="{{mainLiveUrl}}" ng-attr-poster="{{mainSnapshot}}" controls></video>
+    </sc-video-container>
+    <div class="stadmbox clfix">
+      <h4 class="fl">上海</h4>
+      <span  class="fr">{{stadiumName}}</span>
+    </div>
+  </div>
+  <!--videoend-->		
+  <!--selectbegain-->
+  <div class="stamseek clfix">
+			<div class="fl gray3">筛选：</div>
+			<div class="stamiddle  fl">
+				<div class="hotball clfix" data-selected-class="greenbder1">
+					<a href="javascript:" class="fl  gray92b " ng-class="{greenbder1:$index==0}" ng-repeat="type in sportType" ng-click="filterSport(this,$event)">{{type}}</a>
+				</div>
+				<div class="hotarea clfix" ng-show="court.length > 1" data-selected-class="greenbder1">
+					<a href="javascript:" class="fl  gray92b " ng-class="{greenbder1:$index==0}" ng-repeat="court in court" ng-click="filterCourt(this,$event)">{{court}}</a>
+				</div>
+			</div>
+			<a href="javascript:" class="fr downbtn" ng-class="{'upbtn': !showMainVideo}" ng-click="toggleVideo()"></a>
+		</div>
+  <!--selectend-->
+  <!--detalstart-->
+  <div class="detsdm">
+    <h4 class=" whiter">{{date}}</h4>
+    <sc-scrollview class="wid10 time-line" firebottom="timeline.update.next">
+      <ul class="schedule">
+        <li class="clfix bgcf6" ng-class="{'篮球': 'bsktball', '足球': 'ftbal', '羽毛球': 'iceball'}[item.type]" ng-repeat="item in timeLine">
+          <div class="tmbal fl ">{{item.startTime | limitTo:5}}<br/>{{item.endTime | limitTo:5}}</div>
+          <div ng-class="{'step1': $index==0, 'step2': $index>0}">
+            <a href="javascript:" data-path="{{item.path}}" ng-click="palyVideo($event)">{{item.courtName}}</a>
+          </div>		
+          <div class="fl wid10">
+            <ul>
+              <li class="wondfm bgceb" ng-repeat="video in item.clips">
+                <span data-path="{{video.path}}" ng-click="palyVideo($event)">{{video.title}}</span>
+              </li>
+            </ul>		
+          </div>
+        </li>				
+      </ul>			
+  </sc-scrollview>       
+</div>

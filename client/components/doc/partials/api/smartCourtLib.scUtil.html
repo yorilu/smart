@@ -1,0 +1,32 @@
+<h1><code ng:non-bindable="">scUtil</code>
+<div><span class="hint">service in module <code ng:non-bindable="">smartCourtLib</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="smartcourtlib-scutil-page"><p>工具方法集合</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_set">set(obj, path, value)</h3>
+<div class="set"><div class="smartcourtlib-scutil-set-page"><p>给一个Json对象赋值，赋值允许嵌套</p>
+</div><h5 id="methods_set_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>obj</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scutil-set-page"><p>要赋值的对象</p>
+</div></td></tr><tr><td>path</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="smartcourtlib-scutil-set-page"><p>要赋值的属性，允许嵌套，嵌套属性以.风格</p>
+</div></td></tr><tr><td>value</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scutil-set-page"><p>要赋值的值</p>
+</div></td></tr></tbody></table><h5 id="methods_set_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="smartcourtlib-scutil-set-page"><p>result 完成赋值的对象</p>
+</div></td></tr></table><h4 id="methods_set_example">Example</h4>
+<div class="example"><div class="smartcourtlib-scutil-set-page"><p><pre>
+  var obj = {
+    body:{
+      part1:{},
+      part2:&#39;message&#39;
+    }
+ }
+scUtil.set(obj,&#39;body.part1&#39;,{
+  size:0
+});</p>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

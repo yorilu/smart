@@ -1,0 +1,1 @@
+describe("Controller: MainCtrl",function(){beforeEach(module("smartCourtApp"));var e,t,n;beforeEach(inject(function(r,i,s){n=r,n.expectGET("/api/things").respond(["HTML5 Boilerplate","AngularJS","Karma","Express"]),t=s.$new(),e=i("MainCtrl",{$scope:t})})),it("should attach a list of things to the scope",function(){n.flush(),expect(t.awesomeThings.length).toBe(4)})})

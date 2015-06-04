@@ -1,0 +1,10 @@
+/* ========================================================================
+ * Ratchet: toggles.js v2.0.2
+ * http://goratchet.com/components#toggles
+ * ========================================================================
+   Adapted from Brad Birdsall's swipe
+ * Copyright 2014 Connor Sears
+ * Licensed under MIT (https://github.com/twbs/ratchet/blob/master/LICENSE)
+ * ======================================================================== */
+
+!function(){var e={},t=!1,n=!1,r=!1,i=function(e){var t,n=document.querySelectorAll(".toggle");for(;e&&e!==document;e=e.parentNode)for(t=n.length;t--;)if(n[t]===e)return e};window.addEventListener("touchstart",function(n){n=n.originalEvent||n,r=i(n.target);if(!r)return;var s=r.querySelector(".toggle-handle"),o=r.clientWidth,u=s.clientWidth,a=r.classList.contains("active")?o-u:0;e={pageX:n.touches[0].pageX-a,pageY:n.touches[0].pageY},t=!1}),window.addEventListener("touchmove",function(i){i=i.originalEvent||i;if(i.touches.length>1)return;if(!r)return;var s=r.querySelector(".toggle-handle"),o=i.touches[0],u=r.clientWidth,a=s.clientWidth,f=u-a;t=!0,n=o.pageX-e.pageX;if(Math.abs(n)<Math.abs(o.pageY-e.pageY))return;i.preventDefault();if(n<0)return s.style.webkitTransform="translate3d(0,0,0)";if(n>f)return s.style.webkitTransform="translate3d("+f+"px,0,0)";s.style.webkitTransform="translate3d("+n+"px,0,0)",r.classList[n>u/2-a/2?"add":"remove"]("active")}),window.addEventListener("touchend",function(e){if(!r)return;var i=r.querySelector(".toggle-handle"),s=r.clientWidth,o=i.clientWidth,u=s-o,a=!t&&!r.classList.contains("active")||t&&n>s/2-o/2;a?i.style.webkitTransform="translate3d("+u+"px,0,0)":i.style.webkitTransform="translate3d(0,0,0)",r.classList[a?"add":"remove"]("active"),e=new CustomEvent("toggle",{detail:{isActive:a},bubbles:!0,cancelable:!0}),r.dispatchEvent(e),t=!1,r=!1})}()
